@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการพนักงาน</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>ระบบจัดการพนักงาน</h1>
+        <div class="flex">
+            <a href="dashboard.html" class="nav-link">หน้าหลัก</a>
+            <a href="report.html" class="nav-link">รายงาน</a>
+            <button onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ฟอร์มเพิ่ม/แก้ไขพนักงาน -->
+        <div class="card">
+            <h2 id="formTitle">เพิ่มพนักงานใหม่</h2>
+
+            <div class="flex">
+                <div class="form-input" style="flex:1">
+                    <label>ชื่อ</label>
+                    <input type="text" name="first_name" placeholder="กรอกชื่อ">
+                </div>
+                <div class="form-input" style="flex:1">
+                    <label>นามสกุล</label>
+                    <input type="text" name="last_name" placeholder="กรอกนามสกุล">
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="form-input" style="flex:1">
+                    <label>แผนก</label>
+                    <select name="department_id">
+                        <option value="1">IT</option>
+                        <option value="2">HR</option>
+                        <option value="3">Finance</option>
+                    </select>
+                </div>
+                <div class="form-input" style="flex:1">
+                    <label>เงินเดือน</label>
+                    <input type="number" name="salary" placeholder="กรอกเงินเดือน">
+                </div>
+            </div>
+
+            <div class="flex" id="userFields">
+                <div class="form-input" style="flex:1">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="กรอก username">
+                </div>
+                <div class="form-input" style="flex:1">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="กรอก password">
+                </div>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <div class="flex">
+                <button onclick="submitEmployee()" class="button" id="submitBtn">เพิ่มพนักงาน</button>
+                <button onclick="resetForm()" class="button button-danger">ยกเลิก</button>
+            </div>
+        </div>
+
+        <!-- ตารางพนักงาน -->
+        <div class="card">
+            <h2>รายชื่อพนักงานทั้งหมด</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>นามสกุล</th>
+                        <th>แผนก</th>
+                        <th>เงินเดือน</th>
+                        <th>Username</th>
+                        <th>จัดการ</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTable">
+                    <tr><td colspan="6">กำลังโหลด...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="employees.js"></script>
+</body>
+</html>

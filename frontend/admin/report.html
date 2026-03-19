@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานรายเดือน</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>ระบบจัดการพนักงาน</h1>
+        <div class="flex">
+            <a href="dashboard.html" class="nav-link">หน้าหลัก</a>
+            <a href="employees.html" class="nav-link">จัดการพนักงาน</a>
+            <button onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>รายงานสรุปรายเดือน</h2>
+
+            <div class="flex" style="margin-top: 16px">
+                <div class="form-input" style="flex:1">
+                    <label>เดือน</label>
+                    <select name="month">
+                        <option value="1">มกราคม</option>
+                        <option value="2">กุมภาพันธ์</option>
+                        <option value="3">มีนาคม</option>
+                        <option value="4">เมษายน</option>
+                        <option value="5">พฤษภาคม</option>
+                        <option value="6">มิถุนายน</option>
+                        <option value="7">กรกฎาคม</option>
+                        <option value="8">สิงหาคม</option>
+                        <option value="9">กันยายน</option>
+                        <option value="10">ตุลาคม</option>
+                        <option value="11">พฤศจิกายน</option>
+                        <option value="12">ธันวาคม</option>
+                    </select>
+                </div>
+                <div class="form-input" style="flex:1">
+                    <label>ปี</label>
+                    <input type="number" name="year" value="2026">
+                </div>
+                <div style="padding-top: 28px">
+                    <button onclick="loadReport()" class="button" style="width:auto; padding: 10px 24px">
+                        ดูรายงาน
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="reportCard" style="display:none">
+            <div class="flex-between">
+                <h2 id="reportTitle">รายงานเดือน</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ชื่อ-นามสกุล</th>
+                        <th>แผนก</th>
+                        <th>วันที่มาทำงาน</th>
+                        <th>ชั่วโมงทำงาน</th>
+                        <th>ชั่วโมงโอที</th>
+                        <th>เงินเดือน</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="report.js"></script>
+</body>
+</html>

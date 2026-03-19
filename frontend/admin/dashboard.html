@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>ระบบจัดการพนักงาน</h1>
+        <div class="flex">
+            <a href="employees.html" class="nav-link">จัดการพนักงาน</a>
+            <a href="report.html" class="nav-link">รายงาน</a>
+            <button onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>ภาพรวมระบบ</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalEmployees">-</div>
+                    <div class="stat-label">พนักงานทั้งหมด</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDepartments">-</div>
+                    <div class="stat-label">แผนกทั้งหมด</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>พนักงานล่าสุด</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>นามสกุล</th>
+                        <th>แผนก</th>
+                        <th>เงินเดือน</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTable">
+                    <tr><td colspan="4">กำลังโหลด...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

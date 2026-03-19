@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าหลักพนักงาน</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>ระบบจัดการพนักงาน</h1>
+        <div class="flex">
+            <button onclick="logout()">ออกจากระบบ</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- สถานะวันนี้ -->
+        <div class="card">
+            <h2>สถานะวันนี้</h2>
+            <div class="stats-grid" style="margin-top: 16px">
+                <div class="stat-card">
+                    <div class="stat-label">เวลาเข้างาน</div>
+                    <div class="stat-number" id="checkInTime">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">เวลาออกงาน</div>
+                    <div class="stat-number" id="checkOutTime">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">ชั่วโมงทำงาน</div>
+                    <div class="stat-number" id="workHours">-</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">ชั่วโมงโอที</div>
+                    <div class="stat-number" id="overtimeHours">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ปุ่มเช็คอิน/เอาท์ -->
+        <div class="card">
+            <div id="message" class="message"></div>
+            <div class="flex" style="justify-content: center; gap: 24px">
+                <button 
+                    onclick="checkIn()" 
+                    class="button button-success" 
+                    id="checkinBtn"
+                    style="width: 200px; padding: 16px; font-size: 18px">
+                    เช็คอิน
+                </button>
+                <button 
+                    onclick="checkOut()" 
+                    class="button button-danger" 
+                    id="checkoutBtn"
+                    style="width: 200px; padding: 16px; font-size: 18px">
+                    เช็คเอาท์
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
