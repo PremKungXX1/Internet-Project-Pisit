@@ -1,0 +1,9 @@
+หลัง clone แล้วให้สร้างไฟล์ backend/.env แล้วใส่ค่านี้:
+
+PORT=5000
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=employee_db
+JWT_SECRET=supersecretkey123
